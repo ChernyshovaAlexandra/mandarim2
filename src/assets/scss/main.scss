@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    border: 0;
+    outline: none;
+    list-style: none;
+    scroll-behavior: smooth;
+   
+    &::before, &::after{
+        touch-action: none;
+        user-select: none;
+        pointer-events: none
+    }
+}
+@import "./reset";
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@font-face {
+    font-family: "Junegull";
+    src: url(../fonts/Junegull.otf);
+}
+// @import "../fonts/Junegull/stylesheet.css";
+
+$orange: #ff7a00;
+.app {
+    max-width: 100%;
+    overflow: hidden;
+}
+.junegull {
+    font-family: "Junegull";
+}
+.ubuntu {
+    font-family: "Ubuntu";
+}
+.btn {
+    padding: 15px 2rem;
+    background: linear-gradient(180deg, #ff9118 0%, #ff6600 100%);
+    border: 4px solid #ffffff;
+    box-shadow: 0px 9px 16px rgba(10, 18, 56, 0.15);
+    border-radius: 3rem;
+    color: #ffffff;
+    position: relative;
+    display: block;
+    text-shadow: 0px 1px 2px rgba(116, 48, 0, 0.2);
+    font-family: "Junegull";
+    font-style: normal;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+    font-size: 1.2rem;
+    transition: all 0.15s ease-in-out;
+
+    box-shadow: 0px 9px 16px rgba(10, 18, 56, 0.15);
+    &:disabled {
+        filter: grayscale(1);
+    }
+    &:not(:disabled):hover {
+        cursor: pointer;
+        box-shadow: none;
+        background: linear-gradient(180deg, #ff6600 0%, #ff9118 100%);
+        transition: all 0.15s ease-in-out;
+    }
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 7px;
+        width: 20px;
+        height: 20px;
+        background: url(../img/snowflake.png) no-repeat center;
+        background-size: contain;
+    }
+    &::after {
+        left: auto;
+        top: auto;
+        bottom: 7px;
+        right: 0px;
+        width: 35px;
+        background: url(../img/snowflake2.png) no-repeat center;
+        background-size: contain;
+    }
+    &.tab {
+        background: linear-gradient(180deg, #97d700 0%, #78be20 100%);
+        transition: all 0.15s ease-in-out;
+        &::before,
+        &::after {
+            display: none;
+        }
+        &:not(.active):hover {
+            background: linear-gradient(180deg, #78be20 0%, #97d700 100%);
+        }
+        &.active {
+            background: linear-gradient(180deg, #97d700 0%, #78be20 100%);
+            transform: scale(1.1);
+            cursor: default;
+            box-shadow: 0px 0 16px white;
+            transition: all 0.15s ease-in-out;
+        }
+    }
+}
+@mixin junegull {
+    font-family: "Junegull";
+    font-style: normal;
+    font-weight: normal;
+}
+@mixin orange {
+    color: #ff7a00;
+}
+@mixin header {
+    @include junegull;
+    text-shadow: 0px 4px 4px rgba(10, 18, 56, 0.15);
+}
+
+h4 {
+    @include header;
+    @include orange;
+    font-size: 2rem;
+    line-height: 115%;
+}
+h2 {
+    @include header;
+    @include orange;
+    font-size: 2.5rem;
+    line-height: 115%;
+    @media screen and (max-width: 550px) {
+        font-size: 2.1rem;
+    }
+    @media screen and (max-width: 376px) {
+        font-size: 1.84rem;
+    }
+}
+.text {
+    &-orange {
+        color: $orange;
+    }
+    &-green {
+        color: #44b517;
+    }
+    &-gray {
+        color: #b1b1b1;
+    }
+    &-red {
+        color: red;
+    }
+    &-darkGreen {
+        color: #00544c;
+    }
+}
+.border {
+    &-darkgreen {
+        border-color: #00544c;
+    }
+}
+
+.w {
+    &-fit {
+        width: fit-content;
+    }
+    &-auto {
+        width: auto;
+    }
+}
+.h {
+    &-auto {
+        height: auto;
+    }
+}
+.lg:h-auto {
+    @media screen and (max-width: 1023px) {
+        height: auto;
+    }
+}
+.z {
+    &-80 {
+        z-index: 80;
+    }
+}

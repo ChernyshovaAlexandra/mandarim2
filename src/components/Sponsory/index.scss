@@ -1,0 +1,188 @@
+.sponsory {
+    background: #e9f4ff url(../../assets/img/sponsory-snowflakes.png) repeat top;
+    background-size: 100%;
+    @media screen and (max-width: 1023px) {
+        background-size: 1430px;
+        background-position: 0 0;
+    }
+    &.main-sp {
+        min-height: 100vh;
+    }
+    h5 {
+        text-transform: lowercase !important;
+    }
+    .container {
+        &::before {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: url(../../assets/img/sponsory-m.png) no-repeat center;
+            background-size: contain;
+            top: 20%;
+            left: -50px;
+            z-index: 20;
+            filter: drop-shadow(6px 9px 14px rgba(0, 0, 0, 0.15));
+            @media screen and (max-width: 1023px) {
+                width: 50px;
+                height: 50px;
+                left: 0;
+                bottom: -50px;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: url(../../assets/img/sponsory-m2.png) no-repeat center;
+            background-size: contain;
+            bottom: 20%;
+            right: -50px;
+            z-index: 20;
+            filter: drop-shadow(6px 9px 14px rgba(0, 0, 0, 0.15));
+            @media screen and (max-width: 1023px) {
+                width: 60px;
+                height: 60px;
+                bottom: -100px;
+                right: -10px;
+            }
+        }
+    }
+    &:not(.main-sp)::before {
+        content: "";
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        top: -290px;
+        height: 300px;
+        background: url(../../assets/img/sponsory-before.png) no-repeat top;
+        background-size: 100%;
+        background-position: center 102%;
+        z-index: -1;
+        @media screen and (max-width: 1023px) {
+            background-size: 1024px;
+        }
+    }
+    &.main-sp {
+        > * {
+            position: relative;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            background: url(../../assets/img/sponsory-snow.png) no-repeat top;
+            height: 300px;
+            width: 100%;
+            background-size: 100%;
+        }
+    }
+    .carousel {
+        filter: drop-shadow(0px 7px 15px rgba(2, 0, 106, 0.1));
+    }
+    .slick-next.slick-arrow {
+        right: calc(50% - 3.5rem);
+    }
+    .slick-prev.slick-arrow {
+        left: calc(50% - 3.5rem);
+    }
+    .products {
+        font-family: "Ubuntu";
+        line-height: 145%;
+        font-size: 0.9rem;
+        text-align: center;
+        @media screen and (max-width: 1700px) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        @media screen and (max-width: 1279px) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        @media screen and (max-width: 1023px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        // @media screen and (max-width: 579px) {
+        //     grid-template-columns: repeat(1, minmax(0, 1fr));
+        // }
+
+        .slick-slide {
+            > div {
+                padding: 1rem;
+            }
+        }
+        .product-img {
+            background: #fff;
+            display: grid;
+            place-items: center;
+            border-radius: 1rem;
+            // filter: drop-shadow(0px 7px 15px rgba(2, 0, 106, 0.1));
+            padding-bottom: 100%;
+            position: relative;
+            height: 0;
+            img {
+                height: 10rem;
+                width: auto;
+                object-fit: contain;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                margin: auto;
+                max-width: 85%;
+                position: absolute;
+
+                @media screen and (max-width: 579px) {
+                    height: 12rem;
+                    max-height: 65% !important;
+                    max-width: 65% !important;
+                    bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+.slick-next.slick-arrow,
+.slick-prev.slick-arrow,
+.slick-arrow:focus {
+    z-index: 20;
+    background: linear-gradient(180deg, #97d700 0%, #78be20 100%) !important;
+    border: 3px solid #ffffff;
+    box-shadow: 0px 9px 16px rgba(10, 18, 56, 0.15);
+    border-radius: 3rem;
+    color: #ffffff;
+    width: 2.5rem;
+    height: 2.5rem;
+    bottom: 2rem;
+    transition: all 0.2s ease-in-out;
+    top: auto;
+    &:hover {
+        background: linear-gradient(180deg, #78be20 0%, #97d700 100%) !important;
+        box-shadow: none;
+        transition: all 0.2s ease-in-out;
+    }
+    &::before {
+        font-family: "Ubuntu";
+        content: "";
+        background: url(../../assets/img/arr-left.png) no-repeat center;
+        background-size: contain;
+        width: 30%;
+        height: 60%;
+        display: grid;
+        place-items: center;
+        margin: auto;
+        left: -5%;
+    }
+    @media screen and (max-width: 579px) {
+        bottom: 0.75rem;
+    }
+}
+.slick-next.slick-arrow {
+    &::before {
+        transform: rotateY(180deg);
+        left: auto;
+        right: -5%;
+    }
+}

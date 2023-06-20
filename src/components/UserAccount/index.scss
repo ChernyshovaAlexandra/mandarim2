@@ -1,0 +1,354 @@
+.userAccount {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+.box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: fit-content;
+    margin: auto;
+    top: 0;
+    background: #f5f8fd;
+    box-shadow: 0px 9px 16px rgba(10, 18, 56, 0.37), inset 0px 2px 0px #ffffff;
+    border-radius: 1rem;
+    max-width: 95%;
+    width: 500px;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: normal;
+    &.scaner {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        left: 0;
+        overflow: hidden;
+        max-width: 100%;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        .message {
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+            z-index: 25;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            background: black;
+            & + p {
+                top: 8rem;
+                bottom: 0;
+                margin: auto;
+                position: absolute;
+                height: fit-content;
+            }
+        }
+        .error-input {
+            background: red !important;
+        }
+        > .box {
+            .btn {
+                @media screen and (min-width: 639px) {
+                    width: fit-content;
+                    padding-left: 4rem;
+                    padding-right: 4rem;
+                    margin: 1rem auto 0;
+                }
+            }
+        }
+        > section > section {
+            padding-top: 100vh !important;
+            height: 0;
+
+            > div {
+                border: none !important;
+                width: 231px !important;
+                height: 148px !important;
+                margin: auto;
+                right: 0;
+                bottom: 0;
+                box-shadow: none !important;
+
+                &::after {
+                    width: 100%;
+                    height: 100%;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background: url(../../assets/img/frame.png) no-repeat center;
+                    background-size: 100%;
+                }
+            }
+        }
+        p {
+            bottom: calc(100px + 5.5rem);
+            left: 0;
+            right: 0;
+            @media screen and (max-width: 375px) {
+                bottom: calc(50px + 5.5rem);
+            }
+        }
+        .btn.absolute {
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+            width: fit-content;
+            @media screen and (max-width: 375px) {
+                bottom: 50px;
+            }
+        }
+        h2 {
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: fit-content;
+            top: 5rem;
+            color: #fff;
+            font-size: 2rem;
+        }
+    }
+    &.registration {
+        width: 900px;
+    }
+
+    .close {
+        z-index: 50;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 8px;
+        background: linear-gradient(180deg, #ff7a00 0%, #ff7a00 100%);
+        transition: all 0.2s;
+        cursor: pointer;
+
+        &:hover {
+            background: linear-gradient(180deg, #ff9118 0%, #ff6600 100%);
+            transition: all 0.2s;
+        }
+        span {
+            width: 60%;
+            left: 0;
+            right: 0;
+            top: 0;
+            background: #fff;
+            position: absolute;
+            display: block;
+            border-radius: 5px;
+            height: 3px;
+            bottom: 0;
+            margin: auto;
+            transform: rotate(45deg);
+            &:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    @media screen and (max-width: 780px) {
+        max-width: 100%;
+        border-radius: 0;
+        bottom: auto;
+        height: 100vh;
+        padding-left: 0;
+        padding-right: 0;
+        .close {
+            & + .row {
+                height: calc(100vh - 4rem);
+                padding-left: 1.5rem;
+                padding-bottom: 1.5rem;
+                padding-right: 1.5rem;
+                overflow-y: auto;
+                h2 {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}
+.checks {
+    &-list {
+        display: grid;
+        grid-template-columns: 180px 1fr 1fr;
+        @media screen and (max-width: 600px) {
+            grid-template-rows: auto auto auto;
+            grid-template-columns: 100%;
+        }
+        td {
+            border-top: 1px solid #ff7a00;
+            border-bottom: 1px solid #ff7a00;
+            display: block;
+            background: #fff;
+            &:first-child {
+                border-radius: 1rem 0 0 1rem;
+                border: 1px solid #ff7a00;
+                border-right: none;
+            }
+            &:last-child {
+                border-radius: 0 1rem 1rem 0;
+                border-right: 1px solid #ff7a00;
+            }
+            @media screen and (max-width: 600px) {
+                border: 1px solid #ff7a00 !important;
+                border-radius: 0 !important;
+                padding-left: 125px;
+                &:not(:last-child) {
+                    border-bottom: none !important;
+                }
+                &:not(:first-child) {
+                    border-top: none !important;
+                }
+                position: relative;
+                &:first-child {
+                    border-radius: 1rem 1rem 0 0 !important;
+                }
+                &:last-child {
+                    border-radius: 0 0 1rem 1rem !important;
+                }
+                &::before {
+                    color: #ff7a00;
+                    display: block;
+                    width: 125px;
+                    left: 1rem;
+                    top: 1rem;
+
+                    position: absolute;
+                    height: fit-content;
+                }
+                &:first-child::before {
+                    content: "Дата:";
+                }
+                &:nth-child(2)::before {
+                    content: "Сумма чека:";
+                }
+                &:nth-child(3)::before {
+                    content: "Розыгрыш:";
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        thead {
+            display: none;
+        }
+    }
+}
+.codeSent {
+    position: fixed;
+    background: #ffffff;
+    padding: 4.5rem 5rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px #80808087;
+    font-size: 1rem;
+    font-size: 2rem;
+    font-family: "Junegull";
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    z-index: 56;
+    @media screen and (max-width: 780px) {
+        padding: 2rem;
+        line-height: 1.4;
+        font-size: 1.3rem;
+    }
+}
+.app {
+    input {
+        border: 1px solid #ff7a00;
+        padding: 14px 1rem;
+        border-radius: 2rem;
+    }
+    .MuiFormControl-root {
+        width: 100%;
+    }
+    .MuiSvgIcon-root {
+        width: 2rem;
+        height: 2rem;
+        fill: #ff8210 !important;
+    }
+    .MuiFormControlLabel-root {
+        color: #000 !important;
+    }
+    fieldset,
+    .MuiOutlinedInput-notchedOutline {
+        border: 1px solid #ff7a00;
+        border-radius: 2rem;
+        height: 3.5rem;
+    }
+    .MuiInputBase-root {
+        height: 3.5rem;
+        input {
+            border: none;
+            width: 100%;
+        }
+    }
+    .MuiOutlinedInput-root {
+        border-radius: 2rem !important;
+        color: #fe7900 !important;
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+        border-color: #ff7a00 !important;
+        height: 3.5rem;
+    }
+    .MuiInputLabel-outlined.MuiInputLabel-shrink {
+        color: #ff7a00 !important;
+    }
+    .MuiSelect-select {
+        background: #fff !important;
+        border-radius: 2rem !important;
+        position: relative;
+        top: -2px;
+    }
+    .MuiSelect-selectMenu {
+        // height: 3.5rem;
+    }
+    .MuiOutlinedInput-input {
+        padding: 1rem;
+    }
+}
+.example {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    z-index: 100;
+    &-top {
+        width: 100%;
+        background: rgba(black, 0.3);
+    }
+    .check {
+    }
+}
+.checks-container {
+    height: 300px;
+    overflow: auto;
+    padding-right: 1rem;
+    @media screen and (max-width: 780px) {
+        height: fit-content;
+        overflow: initial;
+        padding-right: 0;
+    }
+}
