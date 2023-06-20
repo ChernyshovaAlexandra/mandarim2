@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mandarim2/static/css/main.58d1e27b.chunk.css",
-    "main.js": "/mandarim2/static/js/main.669c401c.chunk.js",
-    "main.js.map": "/mandarim2/static/js/main.669c401c.chunk.js.map",
+    "main.js": "/mandarim2/static/js/main.4f336b5e.chunk.js",
+    "main.js.map": "/mandarim2/static/js/main.4f336b5e.chunk.js.map",
     "runtime-main.js": "/mandarim2/static/js/runtime-main.146f0afb.js",
     "runtime-main.js.map": "/mandarim2/static/js/runtime-main.146f0afb.js.map",
     "static/css/2.aaa45a69.chunk.css": "/mandarim2/static/css/2.aaa45a69.chunk.css",
@@ -36,6 +36,6 @@
     "static/css/2.aaa45a69.chunk.css",
     "static/js/2.e4319e19.chunk.js",
     "static/css/main.58d1e27b.chunk.css",
-    "static/js/main.669c401c.chunk.js"
+    "static/js/main.4f336b5e.chunk.js"
   ]
 }
